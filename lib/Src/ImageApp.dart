@@ -5,7 +5,7 @@ class App extends StatefulWidget{
   createState(){
     return AppState();
   }
-
+ 
 }
 
 class AppState extends State<App>{
@@ -14,11 +14,16 @@ class AppState extends State<App>{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        body: Text('$counter'),
         appBar: AppBar(
           title: const Text('Gallery Of Objects'),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed:() => ,
+          onPressed:(){
+            setState((){
+              counter++;
+            });
+          },
           child:Icon(Icons.add),
         )
         ),
